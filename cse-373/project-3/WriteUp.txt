@@ -1,0 +1,40 @@
+Zach Willson
+CSE 373 - WI17
+Homework 3 - TextAssociator
+
+1. What is your favorite sentence you generated with the ThesaurusClient?
+
+    From "this is cool", I got "this is frozen to death" which I find hilarious.
+    
+2. For each of the three Design Decisions above in Implementation Notes, please discuss possible option,
+   and what you ended up choosing, and why?
+   
+    What should the design capacity be? My design capacity was 787 because it is a
+                                        large prime number and my favorite plane.
+    At what load factor should you expand? My load factor was 1, because that is
+                                           where it will start to noticeably slow.
+    What should the new size be? The new size will be 3 times my old array size.
+                                 This will keep me from having to do too many
+                                 expensive operations.
+
+3. What hash function did you choose? Why was this hash function effective, are
+   there alternative functions that you considered? Also please eval hashCode.
+
+    I chose to use the hash function for the String object, I then took the absolute value
+    and then mod'd the value by my size of array and that was my index. I chose this because
+    I felt the WordInfo hashCode function was just a derivative of the String one.
+    
+    I could have used the WordInfo hashCode function, or I could have used a function like adding the length
+    and the characters together. HashCode in WordInfo is the HashCode of String but with a constant attached,
+    that while it is prime, is arbitrary.
+    
+4. We chose to implement this with separate chaining, if you instead were to use a
+   different collision scheme, what would you choose? How would you change your
+   code? Give several specific examples.
+   
+    I would have liked to use use double-hashing to resolve collisions because it does not have the same issue
+    quadratic probing has where similar elements follow the same path.
+    
+    I would change by code by dealing with collisions in my hashCode function so that I do not have to
+    add extra code to over-complicate my other methods. My second hash function would be the hashFunction for WordInfo,
+    I think that should provide enough randomness to keep things nice.
