@@ -1,0 +1,34 @@
+Zach Willson
+CSE 373 - WI17
+Homework 4
+Due 02/22/2017
+
+1. Describe the worst-case asymptotic running times of your methods adjacentVertices and edgeCost.
+   In your answers, use |E| for the number of edges and |V| for the number of vertices. Explain and justify your answers.
+   
+   Answer: For adjacentVertices, my worst-case runtime is O(|E|) because I use a HashMap, so all of my |V| are in O(1), so
+           the overall worst runtime is O(|E|) in my for-each loop. Adding to an ArrayList is also O(1), so overall
+           adjacentVertices runs at O(|E|).
+           
+           For edgeCost, my worst case runtime is O(|E|) because all my operations are O(1) except for where I loop
+           through all the edges for a specific node.
+   
+2. Describe how your code ensures the graph abstraction is protected.
+   If your code makes extra copies of objects for (only) this purpose, explain why.
+   If not, explain why it is not necessary.
+   
+   Answer: I use deep-copy-in and deep-copy-out to make sure my abstraction is protected. I also keep all fields private.
+           Any time I take in an object, I make a new version of it to add to my Graph. When I return, I return a new version
+           of the same information.
+   
+3. Describe how you tested your code.
+
+   Answer: I tested my code by creating a client, adding vertices and edges, and then testing cases to make sure everything
+           worked properly.
+   
+4. If you did the above-and-beyond, describe what you did.
+
+   Answer: For the above-and-beyond, I made a graph of some cities that I have flown to, both on the West Coast and abroad.
+           I got my data from the wikipedia page for international call signs for airports, and then travelmath.com
+           for the flight distance information that is represented through the Edge weights. I also discussed with my dad,
+           who is an Alaska Airlines pilot, and he said my numbers look good.
