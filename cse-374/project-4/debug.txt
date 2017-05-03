@@ -1,0 +1,110 @@
+Script started on Thu 27 Apr 2017 11:28:25 AM PDT
+]0;zach18@klaatu:~/hw4[?1034h[zach18@klaatu hw4]$ gdb
+[?1034hGNU gdb (GDB) Red Hat Enterprise Linux 7.11-67.el7
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) quit
+]0;zach18@klaatu:~/hw4[zach18@klaatu hw4]$ gqd[K[Kdb ./re[K[Kgasp
+[?1034hGNU gdb (GDB) Red Hat Enterprise Linux 7.11-67.el7
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./gasp...done.
+(gdb) r
+Starting program: /homes/zach18/hw4/gasp 
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-157.el7_3.1.x86_64
+Not passed enough parameters
+[Inferior 1 (process 8895) exited with code 01]
+(gdb) r apple text.xt[K[K[Kt[K.txt
+Starting program: /homes/zach18/hw4/gasp apple text.txt
+this is a line with apple
+[Inferior 1 (process 8914) exited with code 0377]
+(gdb) break <[Kgasp.c"[K:68
+Breakpoint 1 at 0x400a22: file gasp.c, line 68.
+(gdb) ru[K apple text.txt
+Starting program: /homes/zach18/hw4/gasp apple text.txt
+
+Breakpoint 1, main (argc=3, args=0x7fffffffdcf8) at gasp.c:69
+69	  if (argc < 3 || (argc <= 3 && (strcmp(args[1], "-n") == 0 || strcmp(args[1], "-i") == 0))) {
+(gdb) c
+Continuing.
+this is a line with apple
+[Inferior 1 (process 8950) exited with code 0377]
+(gdb) break lo[K[Kgasp.c:32
+Breakpoint 2 at 0x400880: file gasp.c, line 32.
+(gdb) r apple text.txt
+Starting program: /homes/zach18/hw4/gasp apple text.txt
+
+Breakpoint 1, main (argc=3, args=0x7fffffffdcf8) at gasp.c:69
+69	  if (argc < 3 || (argc <= 3 && (strcmp(args[1], "-n") == 0 || strcmp(args[1], "-i") == 0))) {
+(gdb) info args
+argc = 3
+args = 0x7fffffffdcf8
+(gdb) print args
+$1 = (char **) 0x7fffffffdcf8
+(gdb) info locals
+No locals.
+(gdb) c
+Continuing.
+
+Breakpoint 2, openfile (match=0x7fffffffdfb9 "apple", file=0x7fffffffdfbf "text.txt", flag=0)
+    at gasp.c:32
+32	  if (f == NULL) {
+(gdb) frame
+#0  openfile (match=0x7fffffffdfb9 "apple", file=0x7fffffffdfbf "text.txt", flag=0) at gasp.c:32
+32	  if (f == NULL) {
+(gdb) list
+27	
+28	int openfile(char* match, char* file, int flag) {
+29	  FILE* f;
+30	  char str[500];
+31	  f = fopen(file, "r");
+32	  if (f == NULL) {
+33	    fprintf(stderr, "Error: file not found\n");
+34	    return 1;
+35	  }
+36	  int count = 0;
+(gdb) info break
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000400a22 in main at gasp.c:68
+	breakpoint already hit 1 time
+2       breakpoint     keep y   0x0000000000400880 in openfile at gasp.c:32
+	breakpoint already hit 1 time
+(gdb) info locals
+f = 0x603010
+str = "\000x\377\367\377\177\000\000\003\004@\000\000\000\000\000\360̢\367\377\177\000\000 \003@\000\000\000\000\000\000\000\000\000\001\000\000\000\035\b\000\000\001\000\000\000\000\333\377\377\377\177\000\000H\333\377\377\377\177\000\000 \333\377\377\377\177\000\000\001\000\000\000\000\000\000\000@}\377\367\377\177\000\000\240\344\377\367\377\177\000\000H\341\377\367\377\177\000\000\257l\336\367\377\177\000\000\000\000\000\000\000\000\000\000@}\377\367\377\177\000\000\001", '\000' <repeats 15 times>, "\001\000\000\000\377\177\000\000H\341\377\367\377\177\000\000\034\373\241\367\377\177\000\000 \301\242\367\377\177\000\000p\333\377\377\377\177\000\000`\333\377\377\377\177\000\000\000\000\000\000\000\000\000\000\240"...
+count = 32767
+(gdb) info args
+match = 0x7fffffffdfb9 "apple"
+file = 0x7fffffffdfbf "text.txt"
+flag = 0
+(gdb) c
+Continuing.
+this is a line with apple
+[Inferior 1 (process 9026) exited with code 0377]
+(gdb) e[Kquit
+]0;zach18@klaatu:~/hw4[zach18@klaatu hw4]$ exit
+exit
+
+Script done on Thu 27 Apr 2017 11:36:15 AM PDT

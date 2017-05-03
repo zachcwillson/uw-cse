@@ -1,0 +1,4 @@
+Btest test test
+this is a line with apple
+line 3 pear 
+finish text file
