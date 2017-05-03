@@ -1,0 +1,6 @@
+Zach Willson
+CSE 374 - Sp 17 - HW3 Problem 4
+
+Q1. It looks lke the produce-scatterplot script makes a graph with x and y lables, then plots the results to the file.
+
+Q2. Based on my scatterplot, it seems that, while there are some outliers, a website with a smaller rank (more popular) also has a smaller index page size. I expected this, as people tend to avoid overwhelming sites with a lot of stimulation.

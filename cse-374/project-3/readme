@@ -1,1 +1,4 @@
+Zach Willson
+CSE 374 - Sp 17 - HW3 Problem 2
 
+2. I decided to keep the bad sites and remove them manually before saving finishing my script. This allowed my sed commands to be less complex and my code more readable.
