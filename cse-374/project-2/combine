@@ -1,0 +1,13 @@
+#!/bin/bash
+# Zach Willson - HW2 - Problem 3 - 4/13/17
+if [ $# -lt 2 ]
+then
+    echo Not enough args passed >&2 && exit 1
+fi
+x=""
+while [ $# -gt 0 ]
+do
+    cat $1
+    shift
+done
+exit 0

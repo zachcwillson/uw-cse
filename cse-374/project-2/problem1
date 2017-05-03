@@ -1,0 +1,21 @@
+Zach Willson
+CSE 374
+Homework 2
+
+Problem 1:
+
+To start, from my home directory I made a new empty directory called hw2 (mkdir hw2)
+I then entered that directory and started work (cd hw2).
+
+My first command was the following: echo tweet > tweet && echo tweet
+The part before && wrote the string 'tweet' to the file tweet, and then the part after && printed 'tweet' to standard out (terminal).
+
+I then wrote the following command: cat tweet
+The output of the file tweet got printed to standard out (terminal), which was the word 'tweet'.
+
+I then ran: ls
+This printed out all the items in the current directory. Because I was in hw2 which just contained the file tweet, that was the only thing printed to standard out (terminal).
+
+To use the grep commmand and get tweet out, I ran: grep -E 'tweet' tweet, which searched the file tweet for the word 'tweet', and printed to standard out the one occurance.
+
+The !! command just runs whatever was the last command, so right after my grep command, entering !! will also print the word 'tweet' to the console.

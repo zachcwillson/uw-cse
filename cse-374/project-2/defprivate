@@ -1,0 +1,7 @@
+#!/bin/bash
+# Zach Willson - HW2 - Problem 2 - 4/13/17
+alias defprivate='chmod -R g=u,o-w'
+# chmod changes permissions
+# -R does it recursively
+# g=u matches group to user
+# o-w removes write for other users

@@ -1,0 +1,17 @@
+#!/bin/bash
+# Zach Willson - HW2 - Problem 4 - 4/13/17
+if [ $# -lt 2 ]
+then
+    echo Not enough args passed >&2 && exit 1
+fi
+date
+x=0
+while [ $# -gt 0 ] 
+do
+    wc -l $1
+    current=`cat $1 | wc -l`
+    x=$((x+current))
+    shift
+done
+echo $x total
+exit 0
