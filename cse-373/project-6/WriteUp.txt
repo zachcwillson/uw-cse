@@ -1,0 +1,28 @@
+Zach Willson
+CSE 373 - WI17
+Homework 6 - Due 3/9/17
+
+1. Using Quick Sort, with the median pivot rule (pick the median of: data[lo],
+   data[hi - 1], and data[(hi + lo) / 2]), sort the following list of numbers.
+   Show your work by drawing the tree of partitions and pivots
+   (as seen in the lecture slides) with the partition rules discussed in lecture
+   (swapping the pivot to index lo and doing swaps to complete the partitions).
+   Apply a cutoff of 3 elements and sort with any sorting method. 
+   data= [5, 7, 9, 1, 3, 4, 6, 8, 2]
+   
+   Answer:
+
+2. Using Radix Sort with a radix of 6 (letters: a, b, c, d, e, f) to alphabetically
+   sort the following strings, draw contents of each bucket at the end of each radix
+   'digit' iteration pass.
+   Strings = (abc, da, ffff, defcd, abebd, ca, b, fef, dfe)
+   
+   Answer:
+   
+3. If you did any above and beyond for extra credit, describe what you did.
+   
+   Answer: To go above and beyond, I made a GereicSorter<E> class. I then
+           copied my methods from PacketSorter, and did a find-replace for 'Packet'
+           to E. The only other change I had to make was on line 52 of GenericSorter
+           because it wouldn't let me create a new array of type E. Thank you for 
+           the most fun cse class I have taken so far!!! :)
